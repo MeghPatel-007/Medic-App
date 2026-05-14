@@ -47,10 +47,10 @@ class Welcome extends StatelessWidget {
             ),
             Padding(
               padding: EdgeInsets.only(
-                top: 100,
+                top: 90,
                 bottom: 30,
-                left: 85,
-                right: 85,
+                left: 30,
+                right: 30,
               ),
               child: Text(
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
@@ -58,11 +58,13 @@ class Welcome extends StatelessWidget {
                   fontSize: 12,
                   color: const Color.fromARGB(255, 7, 7, 7),
                 ),
+                textAlign: TextAlign.center,
               ),
             ),
             ElevatedButton(
               onPressed: () {},
               style: ElevatedButton.styleFrom(
+                elevation: 2,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(100),
                 ),
@@ -82,6 +84,7 @@ class Welcome extends StatelessWidget {
             ElevatedButton(
               onPressed: () {},
               style: ElevatedButton.styleFrom(
+                elevation: 2,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(100),
                 ),
