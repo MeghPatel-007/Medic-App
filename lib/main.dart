@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:medic/pages/welcome.dart';
+// import 'package:flutter/rendering.dart';
+import 'package:medic/pages/splash.dart';
 
 void main() {
-  debugPaintSizeEnabled = true;
+  // debugPaintSizeEnabled = true;
   runApp(const MyApp());
 }
 
@@ -15,10 +15,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Welcome(),
-      theme: ThemeData(
-        // fontFamily: 'League Spartan'
-      ),
+      home: Splash(),
+      // theme: ThemeData(textTheme: GoogleFonts.leagueSpartanTextTheme()),
     );
   }
 }
