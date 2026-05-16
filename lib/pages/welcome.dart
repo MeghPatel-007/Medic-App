@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:medic/pages/login.dart';
 
 class Welcome extends StatelessWidget {
   const Welcome({super.key});
@@ -8,7 +9,6 @@ class Welcome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 255, 255, 255),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -53,7 +53,7 @@ class Welcome extends StatelessWidget {
                 right: 30,
               ),
               child: Text(
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                 style: TextStyle(
                   fontSize: 12,
                   color: const Color.fromARGB(255, 7, 7, 7),
@@ -62,7 +62,10 @@ class Welcome extends StatelessWidget {
               ),
             ),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context,
+                MaterialPageRoute(builder: (context)=>const Login()));
+              },
               style: ElevatedButton.styleFrom(
                 elevation: 2,
                 shape: RoundedRectangleBorder(

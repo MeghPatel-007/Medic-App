@@ -16,7 +16,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Splash(),
-      // theme: ThemeData(textTheme: GoogleFonts.leagueSpartanTextTheme()),
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: const Color.fromARGB(255, 255, 255, 255),
+        ),
+        scaffoldBackgroundColor: Colors.white,
+      ),
     );
   }
 }
