@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:medic/helper/capsulebtn.dart';
 import 'package:medic/pages/login.dart';
 
 class Welcome extends StatelessWidget {
@@ -61,28 +62,7 @@ class Welcome extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
             ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(context,
-                MaterialPageRoute(builder: (context)=>const Login()));
-              },
-              style: ElevatedButton.styleFrom(
-                elevation: 2,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(100),
-                ),
-                backgroundColor: const Color.fromARGB(255, 34, 96, 255),
-                padding: EdgeInsets.symmetric(horizontal: 60, vertical: 15),
-              ),
-              child: Text(
-                "Log In",
-                style: TextStyle(
-                  color: const Color.fromARGB(255, 255, 255, 255),
-                  fontWeight: FontWeight.bold,
-                  fontSize: 18,
-                ),
-              ),
-            ),
+            capsuleBtn(context,"Log In", Login()),
             SizedBox(height: 10),
             ElevatedButton(
               onPressed: () {},

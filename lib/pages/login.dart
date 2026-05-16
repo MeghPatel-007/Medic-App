@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:medic/helper/CircleBtn.dart';
+import 'package:medic/helper/capsulebtn.dart';
 import 'package:medic/helper/inputter.dart';
 import 'package:medic/pages/welcome.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class Login extends StatelessWidget {
   const Login({super.key});
@@ -56,8 +59,49 @@ class Login extends StatelessWidget {
               ),
             ),
             SizedBox(height: 50),
-            inputter("Email or Mobile Number","example@example.com",false),
-            inputter("Password","**********",true),
+            Inputter(
+              title: "Email or Mobile Number",
+              placeholder: "example@example.com",
+              ispassword: false,
+            ),
+            Inputter(
+              title: "Password",
+              placeholder: "**********",
+              ispassword: true,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Text(
+                  "Forget Password",
+                  style: GoogleFonts.leagueSpartan(
+                    color: const Color.fromARGB(255, 34, 96, 255),
+                    fontWeight: FontWeight(600),
+                    fontSize: 12,
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 40),
+            Center(child: capsuleBtn(context, "Log In", Login())),
+            SizedBox(height: 10),
+            Center(
+              child: Text(
+                "or sign up with",
+                style: TextStyle(
+                  fontSize: 12,
+                  color: const Color.fromARGB(255, 7, 7, 7),
+                ),
+              ),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                CircleBtn(context, Icons.g_mobiledata),
+                CircleBtn(context, Icons.facebook_outlined),
+                CircleBtn(context, Icons.fingerprint),
+              ],
+            ),
           ],
         ),
       ),

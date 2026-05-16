@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-// import 'package:flutter/rendering.dart';
 import 'package:medic/pages/splash.dart';
 
 void main() {
