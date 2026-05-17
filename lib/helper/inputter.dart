@@ -30,12 +30,12 @@ class _InputterState extends State<Inputter> {
             style: GoogleFonts.leagueSpartan(
               color: Colors.black,
               fontWeight: FontWeight(600),
-              fontSize: 18,
+              fontSize: 16,
             ),
           ),
         ),
         Padding(
-          padding: EdgeInsets.all(5),
+          padding: EdgeInsets.all(3),
           child: TextField(
             obscuringCharacter: '*',
             style: GoogleFonts.leagueSpartan(

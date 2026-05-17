@@ -1,10 +1,13 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:medic/helper/CircleBtn.dart';
-import 'package:medic/helper/capsulebtn.dart';
-import 'package:medic/helper/inputter.dart';
-import 'package:medic/pages/welcome.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:medic/helper/circle_btn.dart';
+import 'package:medic/helper/capsule_btn.dart';
+import 'package:medic/helper/inputter.dart';
+import 'package:medic/pages/homepage.dart';
+import 'package:medic/pages/signup.dart';
+import 'package:medic/pages/welcome.dart';
 
 class Login extends StatelessWidget {
   const Login({super.key});
@@ -14,7 +17,7 @@ class Login extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
-        toolbarHeight: 70,
+        toolbarHeight: 60,
         leading: IconButton(
           onPressed: () {
             Navigator.push(
@@ -83,7 +86,7 @@ class Login extends StatelessWidget {
               ],
             ),
             SizedBox(height: 40),
-            Center(child: capsuleBtn(context, "Log In", Login())),
+            Center(child: capsuleBtn(context, "Log In", HomePage())),
             SizedBox(height: 10),
             Center(
               child: Text(
@@ -94,12 +97,42 @@ class Login extends StatelessWidget {
                 ),
               ),
             ),
+            SizedBox(height: 10),
+            //! Path for google Facebook Fingerprint
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                CircleBtn(context, Icons.g_mobiledata),
-                CircleBtn(context, Icons.facebook_outlined),
-                CircleBtn(context, Icons.fingerprint),
+                circleBtn(context, FontAwesomeIcons.google,Login()),
+                circleBtn(context, FontAwesomeIcons.facebook,Login()),
+                circleBtn(context, FontAwesomeIcons.fingerprint,Login()),
+              ],
+            ),
+            SizedBox(height: 20,),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                RichText(
+                  text: TextSpan(
+                    style: TextStyle(fontSize: 12),
+                    children: [
+                      TextSpan(text: "Don't have an account? "),
+                      TextSpan(
+                        text: "Sign Up",
+                        style: GoogleFonts.leagueSpartan(
+                          color: const Color.fromARGB(255, 34, 96, 255),
+                          fontWeight: FontWeight(600),
+                        ),
+                        recognizer: TapGestureRecognizer()
+                          ..onTap = () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => Signup()),
+                            );
+                          },
+                      ),
+                    ],
+                  ),
+                ),
               ],
             ),
           ],
