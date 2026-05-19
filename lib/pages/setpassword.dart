@@ -3,7 +3,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:medic/helper/capsule_btn.dart';
 import 'package:medic/helper/inputter.dart';
 import 'package:medic/pages/homepage.dart';
-import 'package:medic/pages/welcome.dart';
 
 class SetPassword extends StatelessWidget {
   const SetPassword({super.key});
@@ -16,10 +15,7 @@ class SetPassword extends StatelessWidget {
         toolbarHeight: 60,
         leading: IconButton(
           onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const Welcome()),
-            );
+            Navigator.pop(context);
           },
           icon: Icon(
             Icons.arrow_back_ios_new_rounded,
@@ -36,35 +32,37 @@ class SetPassword extends StatelessWidget {
           ),
         ),
       ),
-      body: Container(
-        // width: ,
-        padding: EdgeInsets.symmetric(horizontal: 40),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-              style: TextStyle(
-                fontSize: 12,
-                color: const Color.fromARGB(255, 7, 7, 7),
+      body: SingleChildScrollView(
+        child: Container(
+          // width: ,
+          padding: EdgeInsets.symmetric(horizontal: 25),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                style: TextStyle(
+                  fontSize: 12,
+                  color: const Color.fromARGB(255, 7, 7, 7),
+                ),
               ),
-            ),
-            SizedBox(height: 50),
-            Inputter(
-              title: "Password",
-              placeholder: "*************",
-              ispassword: true,
-            ),
-            Inputter(
-              title: "Confirm Password",
-              placeholder: "*************",
-              ispassword: true,
-            ),
-            SizedBox(height: 40),
-            Center(
-              child: capsuleBtn(context, "Create new password", HomePage()),
-            ),
-          ],
+              SizedBox(height: 50),
+              Inputter(
+                title: "Password",
+                placeholder: "*************",
+                ispassword: true,
+              ),
+              Inputter(
+                title: "Confirm Password",
+                placeholder: "*************",
+                ispassword: true,
+              ),
+              SizedBox(height: 40),
+              Center(
+                child: capsuleBtn(context, "Create new password", HomePage()),
+              ),
+            ],
+          ),
         ),
       ),
     );

@@ -11,12 +11,10 @@ class Welcome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
+      body: SingleChildScrollView(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-
           children: [
-            SizedBox(height: 150),
+            SizedBox(height: 190),
             SvgPicture.asset('lib/assets/logo-invert.svg', width: 150),
             SizedBox(height: 15),
             Text(

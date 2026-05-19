@@ -7,7 +7,6 @@ import 'package:medic/helper/circle_btn.dart';
 import 'package:medic/helper/inputter.dart';
 import 'package:medic/pages/login.dart';
 import 'package:medic/pages/setpassword.dart';
-import 'package:medic/pages/welcome.dart';
 
 class Inputfieldtext {
   final String title;
@@ -53,10 +52,7 @@ class Signup extends StatelessWidget {
         toolbarHeight: 60,
         leading: IconButton(
           onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const Welcome()),
-            );
+            Navigator.pop(context);
           },
           icon: Icon(
             Icons.arrow_back_ios_new_rounded,
@@ -73,127 +69,136 @@ class Signup extends StatelessWidget {
           ),
         ),
       ),
-      body: Container(
-        // width: ,
-        padding: EdgeInsets.symmetric(horizontal: 40),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Column(
-              children: list.map((field) {
-                return Inputter(
-                  title: field.title,
-                  placeholder: field.placeholder,
-                  ispassword: field.ispassword,
-                );
-              }).toList(),
-            ),
+      body: SingleChildScrollView(
+        child: Container(
+          // width: ,
+          padding: EdgeInsets.symmetric(horizontal: 25),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Column(
+                children: list.map((field) {
+                  return Inputter(
+                    title: field.title,
+                    placeholder: field.placeholder,
+                    ispassword: field.ispassword,
+                  );
+                }).toList(),
+              ),
 
-            SizedBox(height: 10),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                RichText(
-                  text: TextSpan(
-                    text: "By continuing, you agree to",
-                    style: TextStyle(fontSize: 12),
+              SizedBox(height: 12),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  RichText(
+                    text: TextSpan(
+                      text: "By continuing, you agree to",
+                      style: TextStyle(fontSize: 12, color: Colors.black),
+                    ),
                   ),
-                ),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                RichText(
-                  text: TextSpan(
-                    style: TextStyle(fontSize: 12),
-                    children: [
-                      //! terms of use
-                      TextSpan(
-                        text: "Terms of Use",
-                        style: GoogleFonts.leagueSpartan(
-                          color: const Color.fromARGB(255, 34, 96, 255),
-                          fontWeight: FontWeight(600),
+                ],
+              ),
+              SizedBox(height: 2),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  RichText(
+                    text: TextSpan(
+                      style: TextStyle(fontSize: 12, color: Colors.black),
+                      children: [
+                        //! terms of use
+                        TextSpan(
+                          text: "Terms of Use",
+                          style: GoogleFonts.leagueSpartan(
+                            color: const Color.fromARGB(255, 34, 96, 255),
+                            fontWeight: FontWeight(600),
+                          ),
+                          recognizer: TapGestureRecognizer()
+                            ..onTap = () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => Signup(),
+                                ),
+                              );
+                            },
                         ),
-                        recognizer: TapGestureRecognizer()
-                          ..onTap = () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => Signup()),
-                            );
-                          },
-                      ),
-                      TextSpan(text: " and "),
-                      //! Privacy Policy
-                      TextSpan(
-                        text: "Privacy Policy.",
-                        style: GoogleFonts.leagueSpartan(
-                          color: const Color.fromARGB(255, 34, 96, 255),
-                          fontWeight: FontWeight(600),
+                        TextSpan(text: "  and  "),
+                        //! Privacy Policy
+                        TextSpan(
+                          text: "Privacy Policy.",
+                          style: GoogleFonts.leagueSpartan(
+                            color: const Color.fromARGB(255, 34, 96, 255),
+                            fontWeight: FontWeight(600),
+                          ),
+                          recognizer: TapGestureRecognizer()
+                            ..onTap = () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => Signup(),
+                                ),
+                              );
+                            },
                         ),
-                        recognizer: TapGestureRecognizer()
-                          ..onTap = () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => Signup()),
-                            );
-                          },
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
-                ),
-              ],
-            ),
-            SizedBox(height: 10),
-            Center(child: capsuleBtn(context, "Sign Up", SetPassword())),
-            SizedBox(height: 10),
-            Center(
-              child: Text(
-                "or sign up with",
-                style: TextStyle(
-                  fontSize: 12,
-                  color: const Color.fromARGB(255, 7, 7, 7),
+                ],
+              ),
+              SizedBox(height: 12),
+              Center(child: capsuleBtn(context, "Sign Up", SetPassword())),
+              SizedBox(height: 10),
+              Center(
+                child: Text(
+                  "or sign up with",
+                  style: TextStyle(
+                    fontSize: 12,
+                    color: const Color.fromARGB(255, 7, 7, 7),
+                  ),
                 ),
               ),
-            ),
-            //! Path for google Facebook Fingerprint
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                circleBtn(context, FontAwesomeIcons.google, Login()),
-                circleBtn(context, FontAwesomeIcons.facebook, Login()),
-                circleBtn(context, FontAwesomeIcons.fingerprint, Login()),
-              ],
-            ),
-            SizedBox(height: 30),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                RichText(
-                  text: TextSpan(
-                    style: TextStyle(fontSize: 12),
-                    children: [
-                      TextSpan(text: "already have an account? "),
-                      TextSpan(
-                        text: "Log in",
-                        style: GoogleFonts.leagueSpartan(
-                          color: const Color.fromARGB(255, 34, 96, 255),
-                          fontWeight: FontWeight(600),
+              //! Path for google Facebook Fingerprint
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  circleBtn(context, FontAwesomeIcons.google, Login()),
+                  // circleBtn(context, FontAwesomeIcons.facebook, Login()),
+                  circleBtn(context, FontAwesomeIcons.github, Login()),
+                ],
+              ),
+              SizedBox(height: 30),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  RichText(
+                    text: TextSpan(
+                      style: TextStyle(fontSize: 12, color: Colors.black),
+                      children: [
+                        TextSpan(text: "already have an account?  "),
+                        TextSpan(
+                          text: "Log in",
+                          style: GoogleFonts.leagueSpartan(
+                            color: const Color.fromARGB(255, 34, 96, 255),
+                            fontWeight: FontWeight(600),
+                          ),
+                          recognizer: TapGestureRecognizer()
+                            ..onTap = () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => Login(),
+                                ),
+                              );
+                            },
                         ),
-                        recognizer: TapGestureRecognizer()
-                          ..onTap = () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => Login()),
-                            );
-                          },
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
-                ),
-              ],
-            ),
-          ],
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
