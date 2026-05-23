@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:medic/pages/splash.dart';
+import 'package:medic/features/auth/pages/splash_page.dart';
 
 void main() {
-  debugPaintSizeEnabled = true;
   runApp(const MyApp());
 }
 

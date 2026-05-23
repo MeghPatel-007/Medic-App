@@ -2,11 +2,11 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:medic/helper/capsule_btn.dart';
-import 'package:medic/helper/circle_btn.dart';
-import 'package:medic/helper/inputter.dart';
-import 'package:medic/pages/login.dart';
-import 'package:medic/pages/setpassword.dart';
+import 'package:medic/features/auth/pages/set_password_page.dart';
+import 'package:medic/widgets/buttons/capsule_btn.dart';
+import 'package:medic/widgets/buttons/circle_btn.dart';
+import 'package:medic/features/auth/widgets/inputs/inputter.dart';
+import 'package:medic/features/auth/pages/login_page.dart';
 
 class Inputfieldtext {
   final String title;

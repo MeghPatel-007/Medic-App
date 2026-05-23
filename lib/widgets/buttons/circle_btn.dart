@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:medic/core/theme/app_color.dart';
 
 Widget circleBtn(
   BuildContext context,
   FaIconData fontIcon,
   Widget path, {
-  Color color = const Color.fromARGB(255, 34, 96, 255),
-  Color bgcolor = const Color.fromARGB(255, 128, 156, 255)
+  Color color = AppColors.blue,
+  Color bgcolor = AppColors.violet
 }) {
   return Padding(
-    padding: EdgeInsets.all(7),
+    padding: EdgeInsets.all(4),
     child: IconButton(
       icon: FaIcon(fontIcon, color: color, size: 28),
       onPressed: () {

@@ -2,11 +2,11 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:medic/helper/circle_btn.dart';
-import 'package:medic/helper/capsule_btn.dart';
-import 'package:medic/helper/inputter.dart';
-import 'package:medic/pages/homepage.dart';
-import 'package:medic/pages/signup.dart';
+import 'package:medic/navigation/main_navigation.dart';
+import 'package:medic/widgets/buttons/circle_btn.dart';
+import 'package:medic/widgets/buttons/capsule_btn.dart';
+import 'package:medic/features/auth/widgets/inputs/inputter.dart';
+import 'package:medic/features/auth/pages/signup_page.dart';
 
 class Login extends StatelessWidget {
   const Login({super.key});
@@ -83,7 +83,7 @@ class Login extends StatelessWidget {
                 ],
               ),
               SizedBox(height: 40),
-              Center(child: capsuleBtn(context, "Log In", HomePage())),
+              Center(child: capsuleBtn(context, "Log In", MainNavigation())),
               SizedBox(height: 10),
               Center(
                 child: Text(

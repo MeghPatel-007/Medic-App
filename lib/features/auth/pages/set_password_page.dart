@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:medic/helper/capsule_btn.dart';
-import 'package:medic/helper/inputter.dart';
-import 'package:medic/pages/homepage.dart';
+import 'package:medic/navigation/main_navigation.dart';
+import 'package:medic/widgets/buttons/capsule_btn.dart';
+import 'package:medic/features/auth/widgets/inputs/inputter.dart';
 
 class SetPassword extends StatelessWidget {
   const SetPassword({super.key});
@@ -59,7 +59,7 @@ class SetPassword extends StatelessWidget {
               ),
               SizedBox(height: 40),
               Center(
-                child: capsuleBtn(context, "Create new password", HomePage()),
+                child: capsuleBtn(context, "Create new password", MainNavigation()),
               ),
             ],
           ),

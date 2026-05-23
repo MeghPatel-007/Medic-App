@@ -2,7 +2,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:medic/pages/welcome.dart';
+import 'package:medic/features/auth/pages/welcome_page.dart';
 
 class Splash extends StatefulWidget {
   const Splash({super.key});

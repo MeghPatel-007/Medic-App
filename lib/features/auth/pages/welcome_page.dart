@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:medic/helper/capsule_btn.dart';
-import 'package:medic/pages/login.dart';
-import 'package:medic/pages/signup.dart';
+import 'package:medic/widgets/buttons/capsule_btn.dart';
+import 'package:medic/features/auth/pages/login_page.dart';
+import 'package:medic/features/auth/pages/signup_page.dart';
 
 class Welcome extends StatelessWidget {
   const Welcome({super.key});
