@@ -19,7 +19,7 @@ class _MainNavigationState extends State<MainNavigation> {
     return Scaffold(
       extendBody: true,
       bottomNavigationBar: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+        padding: EdgeInsets.symmetric(horizontal: 10, vertical: 20),
         child: ClipRRect(
           borderRadius: BorderRadius.circular(50),
           child: NavigationBar(
